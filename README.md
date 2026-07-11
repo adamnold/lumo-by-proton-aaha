@@ -1,78 +1,13 @@
-# Lumo (AAHA)
+# Lumo by Proton for Linux — AAHA
 
-A native **Lumo (by Proton) desktop app for Linux**, built with Electron
-by **Adam And His Agents (AAHA)**. It wraps the official Lumo web app
-(`https://lumo.proton.me`) — Proton's private AI assistant — in a clean,
-standalone window that behaves like a real desktop application, including
-a **stable taskbar icon that KDE Plasma on Wayland will NOT swap for the
-generic browser icon**.
+Unofficial Lumo by Proton Electron desktop app for Fedora KDE, with a stable Wayland taskbar icon.
 
-> **Unofficial / not affiliated with Proton.** This is a third-party
-> wrapper. It is not endorsed by or affiliated with Proton AG. "Proton"
-> and "Lumo" are trademarks of Proton AG. See `NOTICE` for details. Your
-> use of Lumo remains subject to Proton's own Terms of Service.
+## Privacy notice
 
----
+Electron is Chromium-based. The wrapper disables unnecessary background services and adds no AAHA telemetry, but Lumo, Proton Drive integrations, Proton authentication, CDNs, and deliberately selected external services still receive required traffic. It cannot promise a completely Google-free or independently auditable Chromium runtime. See PRIVACY.md.
 
-## Why this exists
+Run ./build.sh and ./install.sh. The renamed app installs under ~/MyApps/lumo-by-proton-aaha/app. On first installation it safely copies ~/.config/Lumo to ~/.config/Lumo by Proton if needed and retains the original for rollback.
 
-KDE on Wayland picks an app's panel icon from the window's `app_id`
-(WM class) and matches it to a `.desktop` file. Chromium-based PWAs all
-share Chromium's identity, so KDE falls back to the generic browser icon.
+Normal uninstall preserves the new profile; ./uninstall.sh --purge removes only the new local profile. The old lumo.desktop ID remains as a hidden KDE pin compatibility launcher.
 
-A real Electron app sets its **own** `app_id` (`app.setName()` + `--class`)
-and ships a `.desktop` file whose `StartupWMClass` matches exactly.
-
----
-
-## Requirements (Fedora / KDE example)
-
-```bash
-sudo dnf install nodejs npm fuse fuse-libs
-```
-
-(On Debian/Ubuntu: `sudo apt install nodejs npm libfuse2`.)
-
----
-
-## Build & install
-
-```bash
-chmod +x *.sh
-./build.sh
-./install.sh
-```
-
-Build outputs:
-- `dist/linux-unpacked/` — the native unpacked app
-- `dist/*.AppImage` — a portable single-file version
-
-To remove it later: `./uninstall.sh`
-
----
-
-## Configuration (`app.config.js`)
-
-| Field                   | Value                                            |
-|-------------------------|--------------------------------------------------|
-| `url`                   | `https://lumo.proton.me`                         |
-| `name`                  | `Lumo`                                           |
-| `wmClass`               | `Lumo`                                           |
-| `appId`                 | `com.adamandhisagents.lumo`                      |
-| `allowedHosts`          | `["proton.me"]` (covers Proton sign-in)          |
-| `disableHardening`      | `false` (privacy hardening ON)                   |
-
----
-
-## Privacy hardening (on by default)
-
-Chromium background/phone-home subsystems are disabled by default. The
-app should only talk to Proton. To opt out, set `disableHardening: true`
-in `app.config.js`.
-
----
-
-## License
-
-Copyright 2026 **Adam And His Agents (AAHA)**. Wrapper code licensed
-under the **Apache License, Version 2.0** — see `LICENSE`. See `NOTICE`.
+This project is unofficial and is not affiliated with Proton.

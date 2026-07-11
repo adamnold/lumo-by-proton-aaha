@@ -1,42 +1,36 @@
 {
-  "name": "lumo",
-  "productName": "Lumo",
-  "version": "1.0.0",
-  "description": "Lumo (by Proton) desktop app (Electron wrapper) by Adam And His Agents",
+  "name": "lumo-by-proton-aaha",
+  "productName": "Lumo by Proton",
+  "desktopName": "com.adamandhisagents.lumobyproton",
+  "version": "2.0.0",
+  "description": "Unofficial Lumo by Proton desktop application for Linux by Adam And His Agents",
   "main": "src/main.js",
   "author": "Adam And His Agents (AAHA)",
   "license": "Apache-2.0",
   "scripts": {
     "start": "electron .",
+    "check": "node --check src/main.js && node --check src/policy.js && node --check app.config.js && node scripts/validate-config.js",
+    "test": "node --test",
+    "icons": "bash scripts/generate-icons.sh",
     "dist": "electron-builder --linux"
   },
-  "devDependencies": {
-    "electron": "^31.0.0",
-    "electron-builder": "^24.13.3"
-  },
+  "devDependencies": { "electron": "43.1.0", "electron-builder": "26.15.3" },
   "build": {
-    "appId": "com.adamandhisagents.lumo",
-    "productName": "Lumo",
+    "appId": "com.adamandhisagents.lumobyproton",
+    "productName": "Lumo by Proton",
     "asar": true,
-    "files": [
-      "src/**/*",
-      "package.json"
-    ],
+    "files": ["src/**/*", "app.config.js", "build/icons/**/*", "package.json"],
     "linux": {
-      "target": [
-        "dir",
-        "AppImage"
-      ],
-      "category": "Network",
-      "icon": "icons",
-      "executableName": "lumo",
-      "artifactName": "lumo-aaha-${version}-${arch}.AppImage",
-      "desktop": {
-        "Name": "Lumo",
-        "Comment": "Private AI assistant by Proton",
-        "Categories": "Network;",
-        "StartupWMClass": "Lumo"
-      }
+      "target": ["dir", "AppImage"], "category": "Network", "icon": "build/icons",
+      "executableName": "lumo-by-proton-aaha",
+      "artifactName": "lumo-by-proton-aaha-v${version}-${arch}.AppImage",
+      "syncDesktopName": true,
+      "desktop": { "entry": {
+        "Name": "Lumo by Proton", "Comment": "Privacy-focused AI assistant by Proton",
+        "Categories": "Network;", "Keywords": "ai;assistant;proton;lumo;",
+        "StartupWMClass": "com.adamandhisagents.lumobyproton",
+        "Terminal": false, "Type": "Application"
+      }}
     }
   }
 }
