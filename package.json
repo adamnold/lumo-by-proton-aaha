@@ -2,7 +2,7 @@
   "name": "lumo-by-proton-aaha",
   "productName": "Lumo by Proton",
   "desktopName": "com.adamandhisagents.lumobyproton",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Unofficial Lumo by Proton desktop application for Linux by Adam And His Agents",
   "main": "src/main.js",
   "author": "Adam And His Agents (AAHA)",
@@ -14,23 +14,41 @@
     "icons": "bash scripts/generate-icons.sh",
     "dist": "electron-builder --linux"
   },
-  "devDependencies": { "electron": "43.1.0", "electron-builder": "26.15.3" },
+  "devDependencies": {
+    "electron": "43.1.0",
+    "electron-builder": "26.15.3"
+  },
   "build": {
     "appId": "com.adamandhisagents.lumobyproton",
     "productName": "Lumo by Proton",
     "asar": true,
-    "files": ["src/**/*", "app.config.js", "build/icons/**/*", "package.json"],
+    "files": [
+      "src/**/*",
+      "app.config.js",
+      "build/icons/**/*",
+      "package.json"
+    ],
     "linux": {
-      "target": ["dir", "AppImage"], "category": "Network", "icon": "build/icons",
+      "target": [
+        "dir",
+        "AppImage"
+      ],
+      "category": "Network",
+      "icon": "build/icons",
       "executableName": "lumo-by-proton-aaha",
       "artifactName": "lumo-by-proton-aaha-v${version}-${arch}.AppImage",
       "syncDesktopName": true,
-      "desktop": { "entry": {
-        "Name": "Lumo by Proton", "Comment": "Privacy-focused AI assistant by Proton",
-        "Categories": "Network;", "Keywords": "ai;assistant;proton;lumo;",
-        "StartupWMClass": "com.adamandhisagents.lumobyproton",
-        "Terminal": false, "Type": "Application"
-      }}
+      "desktop": {
+        "entry": {
+          "Name": "Lumo by Proton",
+          "Comment": "Privacy-focused AI assistant by Proton",
+          "Categories": "Network;",
+          "Keywords": "ai;assistant;proton;lumo;",
+          "StartupWMClass": "com.adamandhisagents.lumobyproton",
+          "Terminal": false,
+          "Type": "Application"
+        }
+      }
     }
   }
 }
