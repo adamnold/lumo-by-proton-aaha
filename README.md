@@ -1,5 +1,7 @@
 # Lumo by Proton for Linux — AAHA
 
+Last Updated: 2026-07-23
+
 Unofficial Lumo by Proton Electron desktop app for Fedora KDE, with a stable Wayland taskbar icon.
 
 ## Privacy notice
