@@ -1,5 +1,7 @@
 # Privacy and Network Behavior
 
+Last Updated: 2026-07-23
+
 The wrapper adds no AAHA analytics and disables unnecessary Chromium update, background, reporting, translation, optimization, media-routing, and Secure DNS services. Known Google update/telemetry hosts are blocked.
 
 Lumo must contact Proton service, authentication, storage, CDN, and web-search/image providers required by features the user selects. Chromium and host blocklists cannot guarantee zero Google or third-party traffic.

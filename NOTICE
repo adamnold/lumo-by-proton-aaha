@@ -1,4 +1,4 @@
-Lumo (AAHA)
+Lumo by Proton (AAHA)
 Copyright 2026 Adam And His Agents (AAHA)
 
 Licensed under the Apache License, Version 2.0.
@@ -9,7 +9,7 @@ endorsed by or affiliated with Proton AG. "Proton" and "Lumo" are
 trademarks of Proton AG.
 
 This project bundles no Proton code or assets other than the icon in
-icons/icon.png, which is a copy of Proton's own publicly served PWA icon
+assets/icon-source.png, which is a copy of Proton's own publicly served PWA icon
 (https://lumo.proton.me/assets/android-chrome-512x512.png). It only
 loads the Lumo web app in an Electron window at runtime. Your use of
 Lumo remains subject to Proton's own Terms of Service.

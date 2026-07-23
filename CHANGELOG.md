@@ -1,7 +1,10 @@
 # Changelog
 
+Last Updated: 2026-07-23
+
 ## v2.1.0 — 2026-07-23
 
+- Reconciled documentation dates and corrected the bundled icon source path.
 - Restored the regular Lumo by Proton description on the hidden compatibility
   launcher while preserving its stable KDE panel identity and hidden status.
 - Made validation builds explicitly non-publishing, added regression coverage,
