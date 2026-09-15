@@ -1,6 +1,11 @@
 # Changelog
 
-Last Updated: 2026-07-23
+Last Updated: 2026-09-15
+
+## v2.2.0 — 2026-09-15
+
+- Bumped the pinned Electron runtime from exact 43.1.0 to exact 44.3.0.
+- Kept `electron-builder` pinned at exact 26.15.3 and refreshed the lockfile.
 
 ## v2.1.0 — 2026-07-23
 
